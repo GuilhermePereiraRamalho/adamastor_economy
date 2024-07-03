@@ -1,3 +1,1 @@
-from django.contrib import admin
-
-# Register your models here.
+from api.admins.license_admin import LicenseAdmin

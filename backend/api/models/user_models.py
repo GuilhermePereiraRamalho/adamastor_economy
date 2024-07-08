@@ -28,14 +28,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=255)  
     email = models.EmailField(unique=True)  
     is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
 
-    groups = models.ManyToManyField(
-        Group,
-        blank=True,
-        related_name="custom_user_set",  
-        related_query_name="user",
-    )
     user_permissions = models.ManyToManyField(
         Permission,
         blank=True,

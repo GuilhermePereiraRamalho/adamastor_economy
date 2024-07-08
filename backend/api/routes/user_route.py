@@ -21,7 +21,7 @@ def read_users(request):
     users = User.objects.all().order_by('id')
     return [UserOut.from_orm(user) for user in users]
 
-@user_router.get('/', response={200: UserOut})
+@user_router.get('/{user_id}', response={200: UserOut})
 def get_user_by_id(request, user_id: int):
     user = get_object_or_404(User, id=user_id)
     return UserOut.from_orm(user)

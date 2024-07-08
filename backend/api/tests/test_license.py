@@ -1,7 +1,6 @@
 from django.test import TestCase
 from ninja.testing import TestClient
 from api.models.license_models import License
-from api.schemas.license_schema import LicenseIn, LicenseOut, LicenseUpdate
 from api.routes.license_route import license_router
 
 class LicenseTests(TestCase):
